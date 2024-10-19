@@ -1,0 +1,49 @@
+ROUTINE popularCurso
+    kill ^treinamento.Data.CursoD
+    kill ^treinamento.Data.AlunoD
+    kill ^treinamento.Data.InstrutorD
+    kill ^treinamento.Data.TurmaD
+
+    Set Curso = ##class(treinamento.Data.Curso).%New()
+    Set Curso.Nome = "OBJ IRIS"
+    Set Curso.Preco = 1234.56
+    Set Curso.Duracao = 12
+    Set tSC = Curso.%Save()
+
+    Set Aluno1 = ##class(treinamento.Data.Aluno).%New()
+    Set Aluno1.Idade = 33
+    Set Aluno1.Matricula = 432423
+    Set Aluno1.Nome = "Renata"
+    Set tSC = Aluno1.%Save()
+
+    Set Aluno2 = ##class(treinamento.Data.Aluno).%New()
+    Set Aluno2.Idade = 29
+    Set Aluno2.Matricula = 43223
+    Set Aluno2.Nome = "Marcelo"
+    Set tSC = Aluno2.%Save()
+
+    Set Aluno3 = ##class(treinamento.Data.Aluno).%New()
+    Set Aluno3.Idade = 52
+    Set Aluno3.Matricula = 21177
+    Set Aluno3.Nome = "Carlos"
+    Set tSC = Aluno3.%Save()
+
+    Set Instrutor = ##class(treinamento.Data.Instrutor).%New()
+    Set Instrutor.Matricula = 33
+    Set Instrutor.Nome = "Clayton"
+    Set tSC = Instrutor.%Save()
+
+    Set Turma = ##class(treinamento.Data.Turma).%New()
+    Set Turma.Curso = Curso
+    Set Turma.Instrutor = Instrutor
+    Set Turma.Status = "Incompleta"
+    Do Turma.Alunos.Insert(Aluno1)
+    Do Turma.Alunos.Insert(Aluno2)
+    Do Turma.Alunos.Insert(Aluno3)
+    Set tSC = Turma.%Save()
+
+    W !,Turma.Alunos.GetAt(1).Nome
+    W !,Turma.Alunos.GetAt(2).Nome
+    W !,Turma.Alunos.GetAt(3).Nome
+
+

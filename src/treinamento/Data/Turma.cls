@@ -1,13 +1,13 @@
 Class treinamento.Data.Turma Extends (%Persistent, %XML.Adaptor)
 {
 
-Property Instrutor As %String [ SqlColumnNumber = 2 ];
+Property Instrutor As treinamento.Data.Instrutor;
 
 Property DataInicio As %Date [ SqlColumnNumber = 3 ];
 
-Property Status As %Boolean [ SqlColumnNumber = 4 ];
+Property Status As %String [ SqlColumnNumber = 4 ];
 
-Property Alunos As treinamento.Data.Aluno [ SqlColumnNumber = 5 ];
+Property Alunos As list Of treinamento.Data.Aluno [ SqlColumnNumber = 5 ];
 
 Property Curso As treinamento.Data.Curso [ SqlColumnNumber = 6 ];
 
