@@ -1,0 +1,5 @@
+ROUTINE teste
+teste
+    Write "ok",!
+MCO ;
+MCOZ QUIT 

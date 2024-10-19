@@ -1,0 +1,9 @@
+ROUTINE NumerosPares
+    Read "Digite o numero maior: ",y
+    Read "Digite o numero menor: ",x
+
+    For i=x:1:y 
+    {
+        if i #2 = 0  Write i,!
+    }
+

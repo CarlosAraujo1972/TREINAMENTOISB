@@ -1,0 +1,3 @@
+ROUTINE HelloWorld
+HelloWorld
+	Write ?20, "olá mundo! teste OK novamente ",!
