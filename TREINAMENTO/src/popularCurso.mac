@@ -45,5 +45,8 @@ ROUTINE popularCurso
     W !,Turma.Alunos.GetAt(1).Nome
     W !,Turma.Alunos.GetAt(2).Nome
     W !,Turma.Alunos.GetAt(3).Nome
+    
+    Set tStatusCurso = Turma.verificarStatus("O")
+    w !!,tStatusCurso
 
 
